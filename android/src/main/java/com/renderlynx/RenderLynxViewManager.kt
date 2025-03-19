@@ -30,7 +30,7 @@ class RenderLynxViewManager : SimpleViewManager<LynxView>(),
   }
 
   public override fun createViewInstance(context: ThemedReactContext): LynxView {
-    val lynxView = buildLynxView(ThemedReactContext)
+    val lynxView = buildLynxView(context)
     val uri = "noimage.lynx.bundle"
     lynxView.renderTemplateUrl(uri, "")
 
@@ -49,6 +49,6 @@ class RenderLynxViewManager : SimpleViewManager<LynxView>(),
   private fun buildLynxView(context: ThemedReactContext): LynxView {
     val viewBuilder = LynxViewBuilder()
     viewBuilder.setTemplateProvider(DemoTemplateProvider(context))
-    return viewBuilder.build(this)
+    return viewBuilder.build(context)
   }
 }

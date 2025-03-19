@@ -12,6 +12,17 @@ import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.react.soloader.OpenSourceMergedSoMapping
 import com.facebook.soloader.SoLoader
 
+import com.facebook.drawee.backends.pipeline.Fresco
+import com.facebook.imagepipeline.core.ImagePipelineConfig
+import com.facebook.imagepipeline.memory.PoolConfig
+import com.facebook.imagepipeline.memory.PoolFactory
+import com.lynx.service.http.LynxHttpService
+import com.lynx.service.image.LynxImageService
+import com.lynx.service.log.LynxLogService
+import com.lynx.tasm.service.LynxServiceCenter
+
+import com.lynx.tasm.LynxEnv
+
 class MainApplication : Application(), ReactApplication {
 
   override val reactNativeHost: ReactNativeHost =
@@ -35,10 +46,32 @@ class MainApplication : Application(), ReactApplication {
 
   override fun onCreate() {
     super.onCreate()
+    initLynxService()
+    initLynxEnv()
     SoLoader.init(this, OpenSourceMergedSoMapping)
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
       // If you opted-in for the New Architecture, we load the native entry point for this app.
       load()
     }
+  }
+
+  private fun initLynxService() {
+    // init Fresco which is needed by LynxImageService
+    val factory = PoolFactory(PoolConfig.newBuilder().build())
+    val builder = ImagePipelineConfig.newBuilder(applicationContext).setPoolFactory(factory)
+    Fresco.initialize(applicationContext, builder.build())
+
+    LynxServiceCenter.inst().registerService(LynxImageService.getInstance())
+    LynxServiceCenter.inst().registerService(LynxLogService)
+    LynxServiceCenter.inst().registerService(LynxHttpService)
+  }
+
+  private fun initLynxEnv() {
+    LynxEnv.inst().init(
+      this,
+      null,
+      null,
+      null
+    )
   }
 }
