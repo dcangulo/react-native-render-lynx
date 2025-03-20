@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C80B921A6F3F58F76C31292 /* libPods-RenderLynxExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-RenderLynxExample.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		5DB030A12D8C374A003AA471 /* noimage.lynx.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5DB030A02D8C374A003AA471 /* noimage.lynx.bundle */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		C40E11A1554A6DDB11AE3FEC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
@@ -21,6 +22,8 @@
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = RenderLynxExample/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-RenderLynxExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RenderLynxExample.debug.xcconfig"; path = "Target Support Files/Pods-RenderLynxExample/Pods-RenderLynxExample.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-RenderLynxExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RenderLynxExample.release.xcconfig"; path = "Target Support Files/Pods-RenderLynxExample/Pods-RenderLynxExample.release.xcconfig"; sourceTree = "<group>"; };
+		5DB0309F2D8C3323003AA471 /* RenderLynxExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RenderLynxExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		5DB030A02D8C374A003AA471 /* noimage.lynx.bundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = noimage.lynx.bundle; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-RenderLynxExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RenderLynxExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = RenderLynxExample/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RenderLynxExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				5DB030A02D8C374A003AA471 /* noimage.lynx.bundle */,
+				5DB0309F2D8C3323003AA471 /* RenderLynxExample-Bridging-Header.h */,
 				13B07FAE1A68108700A75B9A /* RenderLynxExample */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -158,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DB030A12D8C374A003AA471 /* noimage.lynx.bundle in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				C40E11A1554A6DDB11AE3FEC /* PrivacyInfo.xcprivacy in Resources */,

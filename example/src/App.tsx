@@ -1,10 +1,13 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { RenderLynxView } from 'react-native-render-lynx';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <RenderLynxView color="#32a852" style={styles.box} />
+      <Text style={{ fontSize: 24 }}>Text Component</Text>
+      <View style={{ height: 700, width: 300, marginTop: 32 }}>
+        <RenderLynxView color="#32a852" style={styles.box} />
+      </View>
     </View>
   );
 }
@@ -12,6 +15,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 40,
     // alignItems: 'center',
     // justifyContent: 'center',
   },
