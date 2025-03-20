@@ -34,8 +34,6 @@ using namespace facebook::react;
     _view = [[LynxView alloc] initWithBuilderBlock:^(LynxViewBuilder *builder) {
       builder.config = [[LynxConfig alloc] initWithProvider:[[RenderLynxTemplateProvider alloc] init]];
     }];
-    _view.preferredLayoutWidth = 300;
-    _view.preferredLayoutHeight = 700;
     _view.layoutWidthMode = LynxViewSizeModeExact;
     _view.layoutHeightMode = LynxViewSizeModeExact;
 
@@ -43,6 +41,15 @@ using namespace facebook::react;
   }
 
   return self;
+}
+
+- (void)layoutSubviews {
+  [super layoutSubviews];
+
+  _view.preferredLayoutWidth = self.frame.size.width;
+  _view.preferredLayoutHeight = self.frame.size.height;
+
+  [_view triggerLayout];
 }
 
 - (void)updateProps:(Props::Shared const &)props oldProps:(Props::Shared const &)oldProps
