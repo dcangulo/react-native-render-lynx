@@ -9,7 +9,7 @@ Render a LynxJS bundle in your React Native application.
 > This library was created out of curiosity to explore LynxJS and see how it could be integrated with React Native. It was a weekend project and is purely a proof of concept. While it works, there may be gotchas or edge cases that I haven't encountered. Use at your own discretion. Contributions are welcome, but please be aware that responses to issues and pull requests may be limited.
 
 ## Known Issue
-LynxJS bundles with images won't work with Android. This is because React Native is shipped with `fresco:3.6.0` by default, while LynxJS depends on `fresco:2.6.0`. Using either version crashes the app. See: https://github.com/lynx-family/lynx/issues/410
+LynxJS bundles with images won't work with Android. This is because React Native is shipped with `fresco:3.6.0` by default, while LynxJS depends on `fresco:2.3.0`. Using either version crashes the app. See: https://github.com/lynx-family/lynx/issues/410
 
 ## Installation
 ```bash
@@ -56,6 +56,9 @@ post_install do |installer|
 end
 ```
 > :bulb: You need to re-run `npx pod-install`.
+
+### Expo Prebuild
+To follow.
 
 ## Usage
 ```jsx
