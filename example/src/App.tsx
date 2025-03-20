@@ -1,13 +1,16 @@
-import { View, StyleSheet, Text } from 'react-native';
-import { RenderLynxView } from 'react-native-render-lynx';
+import { View, StyleSheet, Platform } from 'react-native';
+import RenderLynxView from 'react-native-render-lynx';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 24 }}>Text Component</Text>
-      <View style={{ height: 700, width: 300, marginTop: 32 }}>
-        <RenderLynxView color="#32a852" style={styles.box} />
-      </View>
+      <RenderLynxView
+        style={styles.viewStyle}
+        bundleName={Platform.select({
+          android: 'noimage.lynx.bundle',
+          default: 'main.lynx.bundle',
+        })}
+      />
     </View>
   );
 }
@@ -15,14 +18,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 40,
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    padding: 50,
   },
-  box: {
-    // width: 60,
-    // height: 60,
-    // marginVertical: 20,
-    flex: 1,
+  viewStyle: {
+    height: 700,
+    width: 300,
+    marginTop: 32,
   },
 });

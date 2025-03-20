@@ -14,6 +14,6 @@ RCT_EXPORT_MODULE(RenderLynxView)
   return [[UIView alloc] init];
 }
 
-RCT_EXPORT_VIEW_PROPERTY(color, NSString)
+RCT_EXPORT_VIEW_PROPERTY(bundleName, NSString)
 
 @end

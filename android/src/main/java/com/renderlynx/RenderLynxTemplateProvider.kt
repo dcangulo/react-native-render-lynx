@@ -5,7 +5,7 @@ import com.lynx.tasm.provider.AbsTemplateProvider
 import java.io.ByteArrayOutputStream
 import java.io.IOException
 
-class DemoTemplateProvider(context: Context) : AbsTemplateProvider() {
+class RenderLynxTemplateProvider(context: Context) : AbsTemplateProvider() {
   private var mContext: Context = context.applicationContext
 
   override fun loadTemplate(uri: String, callback: Callback) {

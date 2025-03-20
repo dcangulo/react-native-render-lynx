@@ -3,7 +3,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DemoLynxProvider : NSObject <LynxTemplateProvider>
+@interface RenderLynxTemplateProvider : NSObject <LynxTemplateProvider>
 
 @end
 

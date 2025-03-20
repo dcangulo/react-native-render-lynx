@@ -30,25 +30,22 @@ class RenderLynxViewManager : SimpleViewManager<LynxView>(),
   }
 
   public override fun createViewInstance(context: ThemedReactContext): LynxView {
-    val lynxView = buildLynxView(context)
-    val uri = "noimage.lynx.bundle"
-    lynxView.renderTemplateUrl(uri, "")
+    val viewBuilder = LynxViewBuilder()
+    viewBuilder.setTemplateProvider(RenderLynxTemplateProvider(context))
 
-    return lynxView
+    return viewBuilder.build(context)
   }
 
-  @ReactProp(name = "color")
-  override fun setColor(view: LynxView?, color: String?) {
-    // view?.setBackgroundColor(Color.parseColor(color))
+  @ReactProp(name = "bundleName")
+  override fun setBundleName(view: LynxView?, bundleName: String?) {
+    if (bundleName == null) {
+      return
+    }
+
+    view?.renderTemplateUrl(bundleName, "")
   }
 
   companion object {
     const val NAME = "RenderLynxView"
-  }
-
-  private fun buildLynxView(context: ThemedReactContext): LynxView {
-    val viewBuilder = LynxViewBuilder()
-    viewBuilder.setTemplateProvider(DemoTemplateProvider(context))
-    return viewBuilder.build(context)
   }
 }
