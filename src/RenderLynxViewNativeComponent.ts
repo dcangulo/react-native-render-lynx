@@ -1,9 +1,10 @@
+import { type HostComponent, type ViewProps } from 'react-native';
 import codegenNativeComponent from 'react-native/Libraries/Utilities/codegenNativeComponent';
-import type { ViewProps } from 'react-native';
 
-interface NativeProps extends ViewProps {
+export interface NativeProps extends ViewProps {
   bundleName: string;
 }
 
-export default codegenNativeComponent<NativeProps>('RenderLynxView');
-export type { NativeProps };
+export default codegenNativeComponent<NativeProps>(
+  'RenderLynxView'
+) as HostComponent<NativeProps>;

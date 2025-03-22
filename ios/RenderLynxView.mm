@@ -1,9 +1,9 @@
 #import "RenderLynxView.h"
 
-#import "generated/RNRenderLynxViewSpec/ComponentDescriptors.h"
-#import "generated/RNRenderLynxViewSpec/EventEmitters.h"
-#import "generated/RNRenderLynxViewSpec/Props.h"
-#import "generated/RNRenderLynxViewSpec/RCTComponentViewHelpers.h"
+#import "RNRenderLynxViewSpec/ComponentDescriptors.h"
+#import "RNRenderLynxViewSpec/EventEmitters.h"
+#import "RNRenderLynxViewSpec/Props.h"
+#import "RNRenderLynxViewSpec/RCTComponentViewHelpers.h"
 
 #import "RCTFabricComponentsPlugins.h"
 
