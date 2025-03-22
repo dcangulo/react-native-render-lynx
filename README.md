@@ -106,6 +106,9 @@ Put your bundle file `main.lynx.bundle` in `android/app/src/main/assets` directo
 ### Creating a Bundle
 You can start creating LynxJS bundles by following the official documentation: https://lynxjs.org/guide/start/quick-start.html
 
+## Screenshots
+![react-native-render-lynx-hello-world](./example/images/hello-world.png)
+
 ## Changelogs
 See [CHANGELOGS.md](CHANGELOGS.md)
 
