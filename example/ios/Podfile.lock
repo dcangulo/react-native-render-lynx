@@ -1572,7 +1572,7 @@ PODS:
     - React-logger (= 0.78.1)
     - React-perflogger (= 0.78.1)
     - React-utils (= 0.78.1)
-  - RenderLynx (0.1.0):
+  - RenderLynx (0.2.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1898,7 +1898,7 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: 5da0393968ce2767e79f9fda7caa108592b9b63e
   ReactCodegen: 82d5bc3e3ad2c8496848554cb2d3b64b03b53420
   ReactCommon: 269d0d36423fad044eaea49900e88684ac670a16
-  RenderLynx: 2dcb8b9b1d9327c8a9ab9468300e1a9bb6310b6f
+  RenderLynx: 2ece971b382c1ff4f3fe08e7c1ff96467657420d
   SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
   SDWebImageWebPCoder: 295a6573c512f54ad2dd58098e64e17dcf008499
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
