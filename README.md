@@ -21,7 +21,7 @@ npx pod-install
 ### 2. Post-install steps
 <details>
 <summary><strong>Expo Prebuild</strong></summary>
-In your `app.config.js`:
+In your <code>app.config.js</code>:
 
 ```diff
 {
@@ -37,7 +37,7 @@ In your `app.config.js`:
 
 <details>
 <summary><strong>iOS Template Changes</strong></summary>
-In your `ios/Podfile`:
+In your <code>ios/Podfile</code>:
 
 ```diff
 post_install do |installer|
@@ -58,7 +58,7 @@ end
 
 <details>
 <summary><strong>Android Template Changes</strong></summary>
-In your `android/app/src/main/java/<your package name>/MainApplication.kt`:
+In your <code>android/app/src/main/java/<your package name>/MainApplication.kt</code>:
 
 ```diff
 + import com.renderlynx.LynxInitializer
