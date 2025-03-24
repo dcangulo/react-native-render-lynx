@@ -12,12 +12,52 @@ Render a LynxJS bundle in your React Native application.
 LynxJS bundles with images won't work with Android. This is because React Native is shipped with `fresco:3.6.0` by default, while LynxJS depends on `fresco:2.3.0`. Using either version crashes the app. See: https://github.com/lynx-family/lynx/issues/410
 
 ## Installation
+### 1. Install the package
 ```bash
 yarn add react-native-render-lynx
 npx pod-install
 ```
 
-### Android Template Changes
+### 2. Post-install steps
+<details>
+<summary><strong>Expo Prebuild</strong></summary>
+In your `app.config.js`:
+
+```diff
+{
+  // ...
+  plugins: [
+    // ...
++   'react-native-render-lynx',
+  ],
+  // ...
+}
+```
+</details>
+
+<details>
+<summary><strong>iOS Template Changes</strong></summary>
+In your `ios/Podfile`:
+
+```diff
+post_install do |installer|
+  # ...
+
++ installer.pods_project.targets.each do |target|
++   if target.name == 'Lynx'
++     target.build_configurations.each do |config|
++       config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'gnu++17'
++       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
++     end
++   end
++ end
+end
+```
+> :bulb: You need to re-run `npx pod-install`.
+</details>
+
+<details>
+<summary><strong>Android Template Changes</strong></summary>
 In your `android/app/src/main/java/<your package name>/MainApplication.kt`:
 
 ```diff
@@ -37,28 +77,7 @@ class MainApplication : Application(), ReactApplication {
   // ...
 }
 ```
-
-### iOS Template Changes
-In your `ios/Podfile`:
-
-```diff
-post_install do |installer|
-  # ...
-
-+ installer.pods_project.targets.each do |target|
-+   if target.name == 'Lynx'
-+     target.build_configurations.each do |config|
-+       config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'gnu++17'
-+       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
-+     end
-+   end
-+ end
-end
-```
-> :bulb: You need to re-run `npx pod-install`.
-
-### Expo Prebuild
-To follow.
+</details>
 
 ## Usage
 ```jsx
@@ -96,13 +115,8 @@ Run `yarn dev`, `npm run dev`, or `rspeedy dev` in your LynxJS project.
 <RenderLynxView bundleUrl='http://192.168.68.50:3001/main.lynx.bundle?fullscreen=true' />
 ```
 
-### Importing Bundle in Android
-Put your bundle file `main.lynx.bundle` in `android/app/src/main/assets` directory. 
-> :bulb: Create the directory if it does not exist.
-
-```jsx
-<RenderLynxView bundleUrl='noimage.lynx.bundle' />
-```
+### Importing Bundle in Expo Prebuild
+* To follow.
 
 ### Importing Bundle in iOS
 1. Open your project on Xcode.
@@ -113,6 +127,14 @@ Put your bundle file `main.lynx.bundle` in `android/app/src/main/assets` directo
 
 ```jsx
 <RenderLynxView bundleUrl='main.lynx.bundle' />
+```
+
+### Importing Bundle in Android
+Put your bundle file `main.lynx.bundle` in `android/app/src/main/assets` directory.
+> :bulb: Create the directory if it does not exist.
+
+```jsx
+<RenderLynxView bundleUrl='noimage.lynx.bundle' />
 ```
 
 ### Creating a Bundle
