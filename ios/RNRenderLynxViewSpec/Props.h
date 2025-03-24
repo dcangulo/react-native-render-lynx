@@ -21,7 +21,7 @@ class RenderLynxViewProps final : public ViewProps {
 
 #pragma mark - Props
 
-  std::string bundleName{};
+  std::string bundleUrl{};
 };
 
 } // namespace facebook::react

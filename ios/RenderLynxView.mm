@@ -57,9 +57,9 @@ using namespace facebook::react;
   const auto &oldViewProps = *std::static_pointer_cast<RenderLynxViewProps const>(_props);
   const auto &newViewProps = *std::static_pointer_cast<RenderLynxViewProps const>(props);
 
-  if (oldViewProps.bundleName != newViewProps.bundleName) {
-    NSString *bundleName = [[NSString alloc] initWithUTF8String: newViewProps.bundleName.c_str()];
-    [_view loadTemplateFromURL:bundleName initData:nil];
+  if (oldViewProps.bundleUrl != newViewProps.bundleUrl) {
+    NSString *bundleUrl = [[NSString alloc] initWithUTF8String: newViewProps.bundleUrl.c_str()];
+    [_view loadTemplateFromURL:bundleUrl initData:nil];
   }
 
   [super updateProps:props oldProps:oldProps];

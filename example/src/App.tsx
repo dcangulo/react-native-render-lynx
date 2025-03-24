@@ -6,7 +6,7 @@ export default function App() {
     <View style={styles.container}>
       <RenderLynxView
         style={styles.viewStyle}
-        bundleName={Platform.select({
+        bundleUrl={Platform.select({
           android: 'noimage.lynx.bundle',
           default: 'main.lynx.bundle',
         })}

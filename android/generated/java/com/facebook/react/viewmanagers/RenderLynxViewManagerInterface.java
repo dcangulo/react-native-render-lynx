@@ -13,5 +13,5 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 public interface RenderLynxViewManagerInterface<T extends View> {
-  void setBundleName(T view, @Nullable String value);
+  void setBundleUrl(T view, @Nullable String value);
 }

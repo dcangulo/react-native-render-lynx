@@ -19,7 +19,7 @@ RenderLynxViewProps::RenderLynxViewProps(
     const RenderLynxViewProps &sourceProps,
     const RawProps &rawProps): ViewProps(context, sourceProps, rawProps),
 
-    bundleName(convertRawProp(context, rawProps, "bundleName", sourceProps.bundleName, {}))
+    bundleUrl(convertRawProp(context, rawProps, "bundleUrl", sourceProps.bundleUrl, {}))
       {}
 
 } // namespace facebook::react

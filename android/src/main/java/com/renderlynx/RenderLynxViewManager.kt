@@ -36,13 +36,13 @@ class RenderLynxViewManager : SimpleViewManager<LynxView>(),
     return viewBuilder.build(context)
   }
 
-  @ReactProp(name = "bundleName")
-  override fun setBundleName(view: LynxView?, bundleName: String?) {
-    if (bundleName == null) {
+  @ReactProp(name = "bundleUrl")
+  override fun setBundleUrl(view: LynxView?, bundleUrl: String?) {
+    if (bundleUrl == null) {
       return
     }
 
-    view?.renderTemplateUrl(bundleName, "")
+    view?.renderTemplateUrl(bundleUrl, "")
   }
 
   companion object {

@@ -1,18 +1,14 @@
-import { View, StyleSheet, Platform } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import type { NativeProps } from './RenderLynxViewNativeComponent';
 import RenderLynxViewNativeComponent from './RenderLynxViewNativeComponent';
 
 export default function RenderLynxView(props: NativeProps) {
-  const defaultBundleName = props.bundleName || 'main.lynx.bundle';
-  const bundleName = Platform.select({
-    ios: defaultBundleName.replace('.bundle', ''),
-    default: defaultBundleName,
-  });
+  const bundleUrl = props.bundleUrl || 'main.lynx.bundle';
 
   return (
     <View {...props} style={[styles.container, props.style]}>
       <RenderLynxViewNativeComponent
-        bundleName={bundleName}
+        bundleUrl={bundleUrl}
         style={styles.native}
       />
     </View>

@@ -24,8 +24,8 @@ public class RenderLynxViewManagerDelegate<T extends View, U extends BaseViewMan
   @Override
   public void setProperty(T view, String propName, @Nullable Object value) {
     switch (propName) {
-      case "bundleName":
-        mViewManager.setBundleName(view, value == null ? null : (String) value);
+      case "bundleUrl":
+        mViewManager.setBundleUrl(view, value == null ? null : (String) value);
         break;
       default:
         super.setProperty(view, propName, value);
