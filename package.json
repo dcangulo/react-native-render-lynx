@@ -1,6 +1,6 @@
 {
   "name": "react-native-render-lynx",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Render a LynxJS bundle in your React Native application.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -107,7 +107,8 @@
   },
   "eslintIgnore": [
     "node_modules/",
-    "lib/"
+    "lib/",
+    "plugin/withRenderLynx.js"
   ],
   "prettier": {
     "quoteProps": "consistent",

@@ -109,33 +109,50 @@ const styles = StyleSheet.create({
 ```
 
 ### Using a Remote Bundle
-Run `yarn dev`, `npm run dev`, or `rspeedy dev` in your LynxJS project.
+Run `yarn dev`, `npm run dev`, or `rspeedy dev` in your LynxJS project and copy the bundle URL.
 
 ```jsx
 <RenderLynxView bundleUrl='http://192.168.68.50:3001/main.lynx.bundle?fullscreen=true' />
 ```
 
 ### Importing Bundle in Expo Prebuild
-* To follow.
+```js
+{
+  // ...
+  plugins: [
+    // ...
+    [
+      'react-native-render-lynx',
+      {
+        bundlePath: './src/main.lynx.bundle',
+      },
+    ],
+  ],
+  // ...
+}
+
+```
+This will use `./src/main.lynx.bundle` on both iOS and Android. If you want to override you can do:
+```js
+{
+  bundlePath: './src/main.lynx.bundle',
+  android: {
+    bundlePath: './src/noimage.lynx.bundle',
+  },
+},
+```
+This will use `./src/main.lynx.bundle` on iOS and `./src/noimage.lynx.bundle` on Android.
 
 ### Importing Bundle in iOS
 1. Open your project on Xcode.
 2. In the target settings of your project, select the target.
-3. Select the Build Phases tab.
-4. In the Copy Bundle Resources section, click the add button (+) to add your bundle file `main.lynx.bundle`.
+3. Select the **Build Phases** tab.
+4. In the **Copy Bundle Resources** section, click the **✚ icon**, click the **Add Other...** button, and select your bundle file.
 > :bulb: https://developer.apple.com/documentation/xcode/customizing-the-build-phases-of-a-target#View-and-add-build-phases-to-a-target
-
-```jsx
-<RenderLynxView bundleUrl='main.lynx.bundle' />
-```
 
 ### Importing Bundle in Android
 Put your bundle file `main.lynx.bundle` in `android/app/src/main/assets` directory.
 > :bulb: Create the directory if it does not exist.
-
-```jsx
-<RenderLynxView bundleUrl='noimage.lynx.bundle' />
-```
 
 ### Creating a Bundle
 You can start creating LynxJS bundles by following the official documentation: https://lynxjs.org/guide/start/quick-start.html

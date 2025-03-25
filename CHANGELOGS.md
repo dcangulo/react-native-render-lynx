@@ -1,5 +1,8 @@
 # Changelogs
 
+## 0.3.0 (2025-03-25)
+* Extend Expo Config Plugin support for bundle files.
+
 ## 0.2.0 (2025-03-24)
 * Fix example app.
 * Added Expo Config Plugin support.
